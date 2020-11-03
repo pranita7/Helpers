@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block nav %}
+    <li><a href="http://127.0.0.1:8000/">Home</a></li>
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'post_list' %}">Posts</a></li>
+    {% else %}
+        <li><a href="{% url 'register' %}">Register</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="slider-area  position-relative ">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider position-relative hero-overly slider-height  d-flex align-items-center" data-background="{% static 'img/don2.jpg' %}">
+                <div class="container">
+                 <div class="row">
+                     <div class="col-xl-6 col-lg-6">
+                        <div class="hero-caption">
+                            <h1 data-animation="fadeInLeft" data-delay=".4s">Donate</h1>
+                            <p data-animation="fadeInLeft" data-delay=".6s">Donate goods and spread Humanity</p>
+                            <!-- Hero Btn -->
+                            <a href="{% url 'register' %}" class="btn"  data-animation="fadeInLeft" data-delay=".8s" >Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Left img -->
+
+            <div class="hero-img" style="bottom: auto ; width: 40%">
+                <img src="{% static 'img/bg.jpg' %}" alt=""  data-animation="fadeInRight" data-transition-duration="5s">
+            </div>
+        </div>
+        <!-- Single Slider -->
+</div>
+</div>
+<div class="clients-area section-padding40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".2s" >
+
+                    <div class="offers-cap">
+                        <span>1</span>
+                        <h3><a href="services.html">Donate</a></h3>
+                        <p>Wanna donate things. Just simply add a post. We will deliver safe. Thanks for taking a step to donate thing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".4s">
+
+                    <div class="offers-cap">
+                        <span>2</span>
+                        <h3><a href="services.html">Request</a></h3>
+                        <p>In need of goods? Click request -> Enter your address -> Select the goods you want -> We deliver them to you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".6s">
+
+                    <div class="offers-cap">
+                        <span>3</span>
+                        <h3><a href="services.html">Transportation</a></h3>
+                        <p>Free transportation. Addresses are verified and the goods are delivered safely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="visit-tailor-area fix">
+    <!--Right Contents  -->
+    <div class="tailor-offers"></div>
+    <!-- left Contents -->
+    <div class="tailor-details">
+        <h2>About our<br>Donation service</h2>
+        <p class="pera-top">Donations and Charities</p>
+        <p class="pera-bottom">Every one take a step and start donating things. The things that are useless to u, are may be very important for others.Donate things and spread Humanity</p>
+        <a href="{% url 'login' %}" class="btn">Login</a>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block nav %}
+    <li><a href="http://127.0.0.1:8000/">Home</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+{% endblock %}
+{% block content %}
+<br>
+
+        <div class="col-lg-4 col-md-4" style="border-style: outset; border-width: 5px; left:570px">
+            <h2>You have been logged out</h2>
+            <small class="text-muted">
+                <a href="{% url 'login' %}" style="color: black">Login again</a>
+            </small>
+        </div>
+
+{% endblock content %}

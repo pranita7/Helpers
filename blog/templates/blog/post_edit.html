@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block nav %}
+    <li><a href="http://127.0.0.1:8000/">Home</a></li>
+    <li><a href="{% url 'post_list' %}">Back</a></li>
+    <li><a href="{% url 'profile' %}">Profile</a></li>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+<!--        {{ formset.management_form }}-->
+<!--        {% for f in formset %}-->
+<!--            {{ f.as_p }}-->
+<!--        {% endfor %}-->
+        <input type="submit" value="Update" class="btn btn-success">
+    </form>
+{% endblock %}
+
